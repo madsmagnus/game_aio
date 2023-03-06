@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 5em;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  margin: auto;
+  background-color: #0bb59f;
+  color: #ffffff;
+  border: 10px solid #271f09;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#screen {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+#game {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+#game_background {
+  grid-area: 1 /1;
+  display: grid;
+  grid: 100% 100%;
+  background-image: url(img/bg.png);
+  background-color: #2f0a0a;
+  background-size: cover;
+  position: relative;
+}
+
+#game-elements {
+  grid-area: 1 /1;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* positioning elements PETL WRITING FIX */
+
+.position1 {
+  position: absolute;
+  scale: 50%;
+  top: 0;
+  left: 10vw;
+}
+
+.position2 {
+  position: absolute;
+  scale: 50%;
+  top: 0;
+  right: 10vw;
+}
+
+.position3 {
+  position: absolute;
+  scale: 50%;
+  top: 0;
+  right: 1000vw;
+}
+
+/* UI */
+#game_ui {
+  position: absolute;
+  top: 0vw;
+  right: 42vw;
+  color: white;
+}
+
+.active_point {
+  filter: drop-shadow(0 0 2px rgb(0, 255, 128));
+}
+
+.inactive_point {
+  filter: grayscale(75%) blur(0.5px);
+}
+
+.hidden,
+#game_over.hidden,
+#game_win.hidden,
+#start.hidden {
+  display: none;
+}
+
+.pulse {
+  animation-name: pulse_kf;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+/* Animations */
+
+.slide1 {
+  animation-name: slide1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide1 {
+  0% {
+    transform: translate(175vw);
+  }
+  100% {
+    transform: translate(60vw);
+  }
+}
+
+.slide2 {
+  animation-name: slide2;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 2;
+}
+
+@keyframes slide2 {
+  0% {
+    transform: translate(-175vw);
+  }
+  100% {
+    transform: translate(-60vw);
+  }
+}
+
+.grow {
+  animation-name: grow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grow {
+  0% {
+    scale: 100%;
+  }
+  100% {
+    scale: 500%;
+  }
+}
+
+.fade_out {
+  animation-name: fade_out;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+    display: none;
+  }
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+/* Spil afslutninger */
+
+#game_over {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #991a8f 0%, #2b022f 100%);
+  color: #ffffff;
+}
+
+#game_win {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #1ea358 0%, #032811 100%);
+  color: #ffffff;
+}
+
+#start {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  background-image: linear-gradient(150deg, #a704f2 0%, #560979 100%);
+  color: #ffffff;
+  position: absolute;
+  width: 100vw;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+}

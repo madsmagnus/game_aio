@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="screen">
+      <div id="game">
+        <div id="game_background"></div>
+        <div id="game_elements">
+          <div id="game_correct1">
+            <img id="correct_sprite1" src="img\aio_correct_1.png" alt="" />
+          </div>
+          <div id="game_correct2">
+            <img id="correct_sprite2" src="img\aio_correct_2.png" alt="" />
+          </div>
+          <div id="game_correct3">
+            <img id="correct_sprite3" src="img\aio_correct_3.png" alt="" />
+          </div>
+          <div id="game_correct4">
+            <img id="correct_sprite4" src="img\aio_correct_4.png" alt="" />
+          </div>
+          <div id="game_correct5">
+            <img id="correct_sprite5" src="img\aio_correct_5.png" alt="" />
+          </div>
+          <div id="game_incorrect1">
+            <img id="incorrect_sprite1" src="img\aio_incorrect_1.png" alt="" />
+          </div>
+          <div id="game_incorrect2">
+            <img id="incorrect_sprite2" src="img\aio_incorrect_2.png" alt="" />
+          </div>
+          <div id="game_incorrect3">
+            <img id="incorrect_sprite3" src="img\aio_incorrect_3.png" alt="" />
+          </div>
+          <div id="game_incorrect4">
+            <img id="incorrect_sprite4" src="img\aio_incorrect_4.png" alt="" />
+          </div>
+          <div id="game_incorrect5">
+            <img id="incorrect_sprite5" src="img\aio_incorrect_5.png" alt="" />
+          </div>
+          <div id="game_ui">
+            <div id="point_board">
+              <h3 id="level_counter"></h3>
+            </div>
+          </div>
+        </div>
+        <div id="start">
+          <h2>Vælg den rigtige AIO</h2>
+          <p>
+            AIO (<u><b>A</b></u
+            >ll-<u><b>I</b></u
+            >n-<u><b>O</b></u
+            >ne) er en kølertype som skal placeres korrekt.<br />Placerer man den ikke korrekt, kan det resultere i at produktet dør alt for tidligt, som vil resultere i overophedning af dit system.
+          </p>
+          <button id="btn_start" class="pulse">Start</button>
+        </div>
+        <div id="game_over" class="hidden">
+          <h2 id="game_over_title"></h2>
+          <img src="img\REMOVEME.png" alt="" /><!-- Shoot image here from js, based on why it is incorrect -->
+          <span id="game_over_text"></span>
+          <button id="btn_over_reset" class="pulse">Reset</button>
+        </div>
+        <div id="game_win" class="hidden">
+          <h2>You won</h2>
+          <p>bla bla</p>
+          <button id="btn_win_reset" class="pulse">Igen!</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
