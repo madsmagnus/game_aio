@@ -115,15 +115,26 @@ button {
   display: none;
 }
 
+
+/* Animations */
+
 .pulse {
-  animation-name: pulse_kf;
-  animation-duration: 0.5s;
+  animation-name: pulse;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-direction: alternate;
 }
 
-/* Animations */
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 0rem rgb(4, 158, 42));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 0.75rem rgb(4, 158, 42));
+  }
+}
 
 .slide1 {
   animation-name: slide1;
@@ -193,6 +204,25 @@ button {
   }
 }
 
+.fade_in {
+  animation-name: fade_in;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 01;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .paused {
   animation-play-state: paused;
 }
@@ -217,7 +247,7 @@ button {
   text-align: center;
   justify-content: center;
   align-content: center;
-  background-image: linear-gradient(150deg, #1ea358 0%, #032811 100%);
+  background-image: linear-gradient(150deg, #991a8f 0%, #2b022f 100%);
   color: #ffffff;
 }
 
@@ -228,7 +258,7 @@ button {
   justify-content: center;
   align-content: center;
   text-align: center;
-  background-image: linear-gradient(150deg, #a704f2 0%, #560979 100%);
+  background-image: linear-gradient(150deg, #991a8f 0%, #2b022f 100%);
   color: #ffffff;
   position: absolute;
   width: 100vw;

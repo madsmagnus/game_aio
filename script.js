@@ -169,8 +169,9 @@ function level5() {
 function gameWin() {
   console.log("GAME WIN");
   document.querySelector("#game_win").classList.remove("hidden");
+  document.querySelector("#game_win").classList.add("fade_in");
   document.getElementById("game_win_img").innerHTML = "<img src='img\\logo.png'>";
-  // document.querySelector("#btn_win_reset").addEventListener("click", resetVars);
+
 }
 
 /// DISPLAY GAME OVER1
@@ -180,7 +181,6 @@ function gameOver1() {
   document.querySelector("#game_over_text").textContent = "Hvis man har pladsen, kan man lige så godt udnytte hele arealet. Prisforskellen er ikke værd at spare på";
   document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over1.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -189,10 +189,9 @@ function gameOver2() {
   console.log("GAME OVER: LEVEL2");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 2";
   document.querySelector("#game_over_text").textContent =
-    "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i top. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
+    "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i toppen. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
   document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over2.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -201,10 +200,9 @@ function gameOver3() {
   console.log("GAME OVER: LEVEL3");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 3";
   document.querySelector("#game_over_text").textContent =
-    "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i top. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
+    "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i toppen. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
   document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over3.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -215,7 +213,6 @@ function gameOver4() {
   document.querySelector("#game_over_text").textContent = "Hellere udnytte pladsen til det yderste, når prisen ofte er meget tæt.";
   document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over4.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -227,7 +224,6 @@ function gameOver5() {
     "En radiator monteret i bunden, og derved pumpen som det højeste punkt, vil uden tvivl betyde en væsentligt kortere levetid for en AIO. Luften vil samle sig i pumpen, som vil ødelægge den.";
   document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over5.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -263,17 +259,6 @@ function clickCorrect() {
   points++;
   document.querySelector("#level_counter").textContent = "Level " + points + "/5";
   eval("level" + points + "()");
-}
-
-/// RESET VARIABLES FOR GAME RESET
-function resetVars() {
-  points = 1;
-  resetAnimation();
-  positionRoll();
-  document.querySelector("#btn_start").removeEventListener("click", resetVars);
-  document.querySelector("#btn_win_reset").removeEventListener("click", resetVars);
-  document.querySelector("#btn_over_reset").removeEventListener("click", resetVars);
-  level1();
 }
 
 /// RESET ANIMATIONS BEFORE GAME RESET
