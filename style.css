@@ -7,6 +7,7 @@ body {
 h2 {
   font-size: 3em;
   margin-bottom: 0;
+  margin-top: -50;
 }
 
 h3 {
@@ -23,6 +24,10 @@ button {
   border: 10px solid #271f09;
   cursor: pointer;
   border-radius: 10px;
+}
+
+#btn_over_reset {
+  margin-top: 1em;
 }
 
 #screen {
@@ -51,6 +56,17 @@ button {
   grid-area: 1 /1;
   overflow: hidden;
   position: absolute;
+}
+
+#level_explain {
+  text-align: center;
+  margin-left: -2em
+}
+
+#game_over_img {
+  scale: 50%;
+  position: relative;
+  margin: -15em;
 }
 
 /* positioning elements PETL WRITING FIX */
@@ -121,7 +137,7 @@ button {
     transform: translate(175vw);
   }
   100% {
-    transform: translate(60vw);
+    transform: translate(60vw, 10vw);
   }
 }
 
@@ -138,7 +154,7 @@ button {
     transform: translate(-175vw);
   }
   100% {
-    transform: translate(-60vw);
+    transform: translate(-60vw, 10vw);
   }
 }
 
@@ -187,6 +203,7 @@ button {
   grid-area: 1 /1;
   z-index: 999;
   display: grid;
+  text-align: center;
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(150deg, #991a8f 0%, #2b022f 100%);
@@ -197,6 +214,7 @@ button {
   grid-area: 1 /1;
   z-index: 999;
   display: grid;
+  text-align: center;
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(150deg, #1ea358 0%, #032811 100%);
