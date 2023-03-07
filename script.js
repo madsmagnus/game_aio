@@ -4,28 +4,21 @@ window.addEventListener("load", ready);
 let points = 1;
 let position_roll2 = 3;
 let position_roll1 = 4;
+document.querySelector("#level_counter").textContent = "Level " + points + "/5";
 
-/// INITIALIZE
-function ready() {
-  console.log("JS LOADED");
-  document.querySelector("#btn_start").addEventListener("click", level1);
-}
+  //////////////
+ /// LEVELS ///
+//////////////
 
 /// BEGIN LEVEL1
 function level1() {
   console.log("LEVEL1 STARTED");
 
-  /// INITIATE LEVEL TEXT
-  document.querySelector("#level_counter").textContent = "Level " + points + "/5";
+  /// CHANGE LEVEL TEXT
   document.querySelector("#level_explain").textContent = "NZXT H7";
 
   /// RUN POSITION ROLL
   positionRoll();
-
-  /// REMOVE GAME START/ENDINGS
-  document.querySelector("#start").classList.add("hidden");
-  document.querySelector("#game_win").classList.add("hidden");
-  document.querySelector("#game_over").classList.add("hidden");
 
   /// PLACE GAME ELEMENTS
   document.querySelector("#game_correct1").classList.add("position" + position_roll2);
@@ -44,17 +37,14 @@ function level1() {
 function level2() {
   console.log("LEVEL2 STARTED");
 
-  /// INITIATE LEVEL TEXT
+  /// CHANGE LEVEL TEXT
   document.querySelector("#level_explain").textContent = "Fractal North";
 
   /// FADE_OUT APPLIED TO LAST LEVEL ELEMENTS
   document.querySelector("#correct_sprite1").classList.add("fade_out");
   document.querySelector("#incorrect_sprite1").classList.add("fade_out");
 
-  /// CLEAN UP FADE_OUT FROM SPRITES
-  document.querySelector("#correct_sprite2").classList.remove("fade_out");
-  document.querySelector("#incorrect_sprite2").classList.remove("fade_out");
-
+  /// YEET LEVEL1 STUFF
   document.querySelector("#correct_sprite1").addEventListener("animationend", yeet2);
 
   /// RUN POSITION ROLL
@@ -63,9 +53,11 @@ function level2() {
   /// PLACE GAME ELEMENTS
   document.querySelector("#game_correct2").classList.add("position" + position_roll2);
   document.querySelector("#game_incorrect2").classList.add("position" + position_roll1);
+
   /// APPLY SLIDE ANIMATION TO GAME ELEMENTS
   document.querySelector("#game_correct2").classList.add("slide" + position_roll2);
   document.querySelector("#game_incorrect2").classList.add("slide" + position_roll1);
+
   /// ADD EVENT LISTENERS TO GAME ELEMENTS
   document.querySelector("#game_correct2").addEventListener("click", clickCorrect);
   document.querySelector("#game_incorrect2").addEventListener("click", gameOver2);
@@ -75,17 +67,14 @@ function level2() {
 function level3() {
   console.log("LEVEL3 STARTED");
 
-  /// INITIATE LEVEL TEXT
+  /// CHANGE LEVEL TEXT
   document.querySelector("#level_explain").textContent = "Corsair 4000D";
 
   /// FADE_OUT APPLIED TO LAST LEVEL ELEMENTS
   document.querySelector("#correct_sprite2").classList.add("fade_out");
   document.querySelector("#incorrect_sprite2").classList.add("fade_out");
 
-  /// CLEAN UP FADE_OUT FROM SPRITES
-  document.querySelector("#correct_sprite3").classList.remove("fade_out");
-  document.querySelector("#incorrect_sprite3").classList.remove("fade_out");
-
+  /// YEET LEVEL2 STUFF
   document.querySelector("#correct_sprite2").addEventListener("animationend", yeet3);
 
   positionRoll();
@@ -105,17 +94,14 @@ function level3() {
 function level4() {
   console.log("LEVEL4 STARTED");
 
-  /// INITIATE LEVEL TEXT
+  /// CHANGE LEVEL TEXT
   document.querySelector("#level_explain").textContent = "Hyte Y60";
 
   /// FADE_OUT APPLIED TO LAST LEVEL ELEMENTS
   document.querySelector("#correct_sprite3").classList.add("fade_out");
   document.querySelector("#incorrect_sprite3").classList.add("fade_out");
 
-  /// CLEAN UP FADE_OUT FROM SPRITES
-  document.querySelector("#correct_sprite4").classList.remove("fade_out");
-  document.querySelector("#incorrect_sprite4").classList.remove("fade_out");
-
+  /// YEET LEVEL3 STUFF
   document.querySelector("#correct_sprite3").addEventListener("animationend", yeet4);
 
   /// RUN POSITION ROLL
@@ -124,9 +110,11 @@ function level4() {
   /// PLACE GAME ELEMENTS
   document.querySelector("#game_correct4").classList.add("position" + position_roll2);
   document.querySelector("#game_incorrect4").classList.add("position" + position_roll1);
+
   /// APPLY SLIDE ANIMATION TO GAME ELEMENTS
   document.querySelector("#game_correct4").classList.add("slide" + position_roll2);
   document.querySelector("#game_incorrect4").classList.add("slide" + position_roll1);
+
   /// ADD EVENT LISTENERS TO GAME ELEMENTS
   document.querySelector("#game_correct4").addEventListener("click", clickCorrect);
   document.querySelector("#game_incorrect4").addEventListener("click", gameOver4);
@@ -136,15 +124,14 @@ function level4() {
 function level5() {
   console.log("LEVEL5 STARTED");
 
-  /// INITIATE LEVEL TEXT
+  /// CHANGE LEVEL TEXT
   document.querySelector("#level_explain").textContent = "Fractal Torrent";
 
   /// FADE_OUT APPLIED TO LAST LEVEL ELEMENTS
   document.querySelector("#correct_sprite4").classList.add("fade_out");
   document.querySelector("#incorrect_sprite4").classList.add("fade_out");
-  document.querySelector("#correct_sprite5").classList.remove("fade_out");
-  document.querySelector("#incorrect_sprite5").classList.remove("fade_out");
 
+  /// YEET LEVEL4 STUFF
   document.querySelector("#correct_sprite4").addEventListener("animationend", yeet5);
 
   /// RUN POSITION ROLL
@@ -153,16 +140,18 @@ function level5() {
   /// PLACE GAME ELEMENTS
   document.querySelector("#game_correct5").classList.add("position" + position_roll2);
   document.querySelector("#game_incorrect5").classList.add("position" + position_roll1);
+
   /// APPLY SLIDE ANIMATION TO GAME ELEMENTS
   document.querySelector("#game_correct5").classList.add("slide" + position_roll2);
   document.querySelector("#game_incorrect5").classList.add("slide" + position_roll1);
+
   /// ADD EVENT LISTENERS TO GAME ELEMENTS
   document.querySelector("#game_correct5").addEventListener("click", gameWin);
   document.querySelector("#game_incorrect5").addEventListener("click", gameOver5);
 }
 
-//////////////////////
-/// GAME ENDINGS  ///
+  ////////////////////
+ /// GAME ENDINGS ///
 ////////////////////
 
 /// DISPLAY GAME WIN
@@ -170,8 +159,6 @@ function gameWin() {
   console.log("GAME WIN");
   document.querySelector("#game_win").classList.remove("hidden");
   document.querySelector("#game_win").classList.add("fade_in");
-  document.getElementById("game_win_img").innerHTML = "<img src='img\\logo.png'>";
-
 }
 
 /// DISPLAY GAME OVER1
@@ -227,9 +214,24 @@ function gameOver5() {
   stop();
 }
 
-///////////////////////
-/// FUNCTIONALITY  ///
+  /////////////////////
+ /// FUNCTIONALITY ///
 /////////////////////
+
+/// INITIALIZE
+function ready() {
+  console.log("JS LOADED");
+  document.querySelector("#btn_start").addEventListener("click", clearMenu);
+}
+
+/// CLEAR WIN/GAMEOVER/START
+function clearMenu() {
+  /// REMOVE GAME START/ENDINGS
+  document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#game_win").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  level1()
+}
 
 /// ROLL RANDOM POSITIONS
 function positionRoll() {
@@ -288,6 +290,8 @@ function resetAnimation() {
   document.querySelector("#game_correct2").classList.remove("slide2");
   document.querySelector("#game_incorrect2").classList.remove("slide1");
   document.querySelector("#game_incorrect2").classList.remove("slide2");
+  document.querySelector("#correct_sprite2").classList.remove("fade_out");
+  document.querySelector("#incorrect_sprite2").classList.remove("fade_out");
 
   /// STOP ANIMATIONS ON LEVEL3
   document.querySelector("#game_correct3").classList.remove("position1");
@@ -300,6 +304,8 @@ function resetAnimation() {
   document.querySelector("#game_correct3").classList.remove("slide2");
   document.querySelector("#game_incorrect3").classList.remove("slide1");
   document.querySelector("#game_incorrect3").classList.remove("slide2");
+  document.querySelector("#correct_sprite3").classList.remove("fade_out");
+  document.querySelector("#incorrect_sprite3").classList.remove("fade_out");
 
   /// STOP ANIMATIONS ON LEVEL4
   document.querySelector("#game_correct4").classList.remove("position1");
@@ -312,6 +318,8 @@ function resetAnimation() {
   document.querySelector("#game_correct4").classList.remove("slide2");
   document.querySelector("#game_incorrect4").classList.remove("slide1");
   document.querySelector("#game_incorrect4").classList.remove("slide2");
+  document.querySelector("#correct_sprite4").classList.remove("fade_out");
+  document.querySelector("#incorrect_sprite4").classList.remove("fade_out");
 
   /// STOP ANIMATIONS ON LEVEL5
   document.querySelector("#game_correct5").classList.remove("position1");
@@ -324,6 +332,8 @@ function resetAnimation() {
   document.querySelector("#game_correct5").classList.remove("slide2");
   document.querySelector("#game_incorrect5").classList.remove("slide1");
   document.querySelector("#game_incorrect5").classList.remove("slide2");
+  document.querySelector("#correct_sprite5").classList.remove("fade_out");
+  document.querySelector("#incorrect_sprite5").classList.remove("fade_out");
 
   /// REMOVE CLICK LISTENERS
   document.querySelector("#game_correct1").removeEventListener("click", clickCorrect);
