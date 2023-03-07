@@ -27,7 +27,7 @@ button {
 }
 
 #btn_over_reset {
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 #screen {
@@ -60,34 +60,34 @@ button {
 
 #level_explain {
   text-align: center;
-  margin-left: -2em
+  margin-left: 1em;
 }
 
 #game_over_img {
   scale: 50%;
   position: relative;
-  margin: -15em;
+  margin: -17em;
 }
 
 /* positioning elements PETL WRITING FIX */
 
 .position1 {
   position: absolute;
-  scale: 50%;
+  scale: 40%;
   top: 0;
   left: 10vw;
 }
 
 .position2 {
   position: absolute;
-  scale: 50%;
+  scale: 40%;
   top: 0;
   right: 10vw;
 }
 
 .position3 {
   position: absolute;
-  scale: 50%;
+  scale: 0%;
   top: 0;
   right: 1000vw;
 }
@@ -137,7 +137,7 @@ button {
     transform: translate(175vw);
   }
   100% {
-    transform: translate(60vw, 10vw);
+    transform: translate(60vw, 0vw);
   }
 }
 
@@ -154,7 +154,7 @@ button {
     transform: translate(-175vw);
   }
   100% {
-    transform: translate(-60vw, 10vw);
+    transform: translate(-60vw, 0vw);
   }
 }
 

@@ -3,7 +3,7 @@ window.addEventListener("load", ready);
 
 let points = 1;
 let position_roll2 = 3;
-let position_roll1 = 4
+let position_roll1 = 4;
 
 /// INITIALIZE
 function ready() {
@@ -16,11 +16,11 @@ function level1() {
   console.log("LEVEL1 STARTED");
 
   /// INITIATE LEVEL TEXT
-  document.querySelector("#level_counter").textContent = "Level " + points;
+  document.querySelector("#level_counter").textContent = "Level " + points + "/5";
   document.querySelector("#level_explain").textContent = "NZXT H7";
 
   /// RUN POSITION ROLL
-  positionRoll()
+  positionRoll();
 
   /// REMOVE GAME START/ENDINGS
   document.querySelector("#start").classList.add("hidden");
@@ -112,12 +112,12 @@ function level4() {
   document.querySelector("#correct_sprite3").classList.add("fade_out");
   document.querySelector("#incorrect_sprite3").classList.add("fade_out");
 
- /// CLEAN UP FADE_OUT FROM SPRITES
-    document.querySelector("#correct_sprite4").classList.remove("fade_out");
-    document.querySelector("#incorrect_sprite4").classList.remove("fade_out");
+  /// CLEAN UP FADE_OUT FROM SPRITES
+  document.querySelector("#correct_sprite4").classList.remove("fade_out");
+  document.querySelector("#incorrect_sprite4").classList.remove("fade_out");
 
   document.querySelector("#correct_sprite3").addEventListener("animationend", yeet4);
-  
+
   /// RUN POSITION ROLL
   positionRoll();
 
@@ -138,7 +138,7 @@ function level5() {
 
   /// INITIATE LEVEL TEXT
   document.querySelector("#level_explain").textContent = "Fractal Torrent";
-  
+
   /// FADE_OUT APPLIED TO LAST LEVEL ELEMENTS
   document.querySelector("#correct_sprite4").classList.add("fade_out");
   document.querySelector("#incorrect_sprite4").classList.add("fade_out");
@@ -169,7 +169,8 @@ function level5() {
 function gameWin() {
   console.log("GAME WIN");
   document.querySelector("#game_win").classList.remove("hidden");
-  document.querySelector("#btn_win_reset").addEventListener("click", resetVars);
+  document.getElementById("game_win_img").innerHTML = "<img src='img\\logo.png'>";
+  // document.querySelector("#btn_win_reset").addEventListener("click", resetVars);
 }
 
 /// DISPLAY GAME OVER1
@@ -177,9 +178,9 @@ function gameOver1() {
   console.log("GAME OVER: LEVEL1");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 1";
   document.querySelector("#game_over_text").textContent = "Hvis man har pladsen, kan man lige så godt udnytte hele arealet. Prisforskellen er ikke værd at spare på";
-  document.getElementById("game_over_img").innerHTML="<img src='\img\\game_over1.png'>";
+  document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over1.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
+  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -187,10 +188,11 @@ function gameOver1() {
 function gameOver2() {
   console.log("GAME OVER: LEVEL2");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 2";
-  document.querySelector("#game_over_text").textContent = "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i top. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
-  document.getElementById("game_over_img").innerHTML="<img src='\img\\game_over2.png'>";
+  document.querySelector("#game_over_text").textContent =
+    "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i top. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
+  document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over2.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
+  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -198,10 +200,11 @@ function gameOver2() {
 function gameOver3() {
   console.log("GAME OVER: LEVEL3");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 3";
-  document.querySelector("#game_over_text").textContent = "Det samme som sidst, helst monteret i top, og en 280 er ofte tæt på 360 i ydelse";
-  document.getElementById("game_over_img").innerHTML="<img src='\img\\game_over3.png'>";
+  document.querySelector("#game_over_text").textContent =
+    "Selv om man kan få en større radiator, så er det altid foretrukkent at have den monteret i top. Desuden så er kølefladen på en 280x140x28 nærmest det samme som 360x120x28 (1098cm³ vs 1210cm³)";
+  document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over3.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
+  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -210,9 +213,9 @@ function gameOver4() {
   console.log("GAME OVER: LEVEL4");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 4";
   document.querySelector("#game_over_text").textContent = "Hellere udnytte pladsen til det yderste, når prisen ofte er meget tæt.";
-  document.getElementById("game_over_img").innerHTML="<img src='\img\\game_over4.png'>";
+  document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over4.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
+  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -220,10 +223,11 @@ function gameOver4() {
 function gameOver5() {
   console.log("GAME OVER: LEVEL5");
   document.querySelector("#game_over_title").textContent = "Game Over: Level 5";
-  document.querySelector("#game_over_text").textContent = "En radiator monteret i bunden, og derved pumpen som det højeste punkt, vil uden tvivl betyde en væsentligt kortere levetid for en AIO. Luften vil samle sig i pumpen, som vil ødelægge den.";
-  document.getElementById("game_over_img").innerHTML="<img src='\img\\game_over5.png'>";
+  document.querySelector("#game_over_text").textContent =
+    "En radiator monteret i bunden, og derved pumpen som det højeste punkt, vil uden tvivl betyde en væsentligt kortere levetid for en AIO. Luften vil samle sig i pumpen, som vil ødelægge den.";
+  document.getElementById("game_over_img").innerHTML = "<img src='img\\game_over5.png'>";
   document.querySelector("#game_over").classList.remove("hidden");
-  document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
+  // document.querySelector("#btn_over_reset").addEventListener("click", resetVars);
   stop();
 }
 
@@ -257,7 +261,7 @@ function clickCorrect() {
   document.querySelector("#game_incorrect4").removeEventListener("click", gameOver4);
   document.querySelector("#game_incorrect5").removeEventListener("click", gameOver5);
   points++;
-  document.querySelector("#level_counter").textContent = "Level " + points;
+  document.querySelector("#level_counter").textContent = "Level " + points + "/5";
   eval("level" + points + "()");
 }
 
@@ -375,13 +379,13 @@ function yeet3() {
 
 /// REMOVE POSITION 1+2 AND APPLY POSITION 3 ON LEVEL3 ELEMENTS
 function yeet4() {
-console.log("OLD ELEMENTS YEETED3");
-document.querySelector("#game_correct3").classList.remove("position1");
-document.querySelector("#game_correct3").classList.remove("position2");
-document.querySelector("#game_correct3").classList.add("position3");
-document.querySelector("#game_incorrect3").classList.remove("position1");
-document.querySelector("#game_incorrect3").classList.remove("position2");
-document.querySelector("#game_incorrect3").classList.add("position3");
+  console.log("OLD ELEMENTS YEETED3");
+  document.querySelector("#game_correct3").classList.remove("position1");
+  document.querySelector("#game_correct3").classList.remove("position2");
+  document.querySelector("#game_correct3").classList.add("position3");
+  document.querySelector("#game_incorrect3").classList.remove("position1");
+  document.querySelector("#game_incorrect3").classList.remove("position2");
+  document.querySelector("#game_incorrect3").classList.add("position3");
 }
 
 /// REMOVE POSITION 1+2 AND APPLY POSITION 3 ON LEVEL4 ELEMENTS
@@ -393,4 +397,4 @@ function yeet5() {
   document.querySelector("#game_incorrect4").classList.remove("position1");
   document.querySelector("#game_incorrect4").classList.remove("position2");
   document.querySelector("#game_incorrect4").classList.add("position3");
-  }
+}
