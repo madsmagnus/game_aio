@@ -1,10 +1,11 @@
 "use strict";
 window.addEventListener("load", ready);
 
+/// SET GLOBAL VARIABLES
 let points = 1;
 let position_roll2 = 3;
 let position_roll1 = 4;
-document.querySelector("#level_counter").textContent = "Level " + points + "/5";
+
 
   //////////////
  /// LEVELS ///
@@ -221,6 +222,7 @@ function gameOver5() {
 /// INITIALIZE
 function ready() {
   console.log("JS LOADED");
+  document.querySelector("#level_counter").textContent = "Level " + points + "/5";
   document.querySelector("#btn_start").addEventListener("click", clearMenu);
 }
 
@@ -230,10 +232,12 @@ function clearMenu() {
   document.querySelector("#start").classList.add("hidden");
   document.querySelector("#game_win").classList.add("hidden");
   document.querySelector("#game_over").classList.add("hidden");
+
+  /// GO TO LEVEL1
   level1()
 }
 
-/// ROLL RANDOM POSITIONS
+/// ROLL RANDOM POSITION_ROLL1 & 2
 function positionRoll() {
   position_roll1 = Math.floor(Math.random() * 2) + 1;
   if (position_roll1 == 1) {
@@ -247,7 +251,7 @@ function positionRoll() {
 //  LEVEL COMPLETE
 function clickCorrect() {
   console.log("LEVEL" + points + " COMPLETE");
-  // Forhindre gentagne clicks
+  /// REMOVE EVENTLISTENENER TO AVOID MULTIPLE CLICKS
   document.querySelector("#game_correct1").removeEventListener("click", clickCorrect);
   document.querySelector("#game_correct2").removeEventListener("click", clickCorrect);
   document.querySelector("#game_correct3").removeEventListener("click", clickCorrect);
@@ -258,8 +262,14 @@ function clickCorrect() {
   document.querySelector("#game_incorrect3").removeEventListener("click", gameOver3);
   document.querySelector("#game_incorrect4").removeEventListener("click", gameOver4);
   document.querySelector("#game_incorrect5").removeEventListener("click", gameOver5);
+
+  /// ADD 1 POINT TO POINTS
   points++;
+
+  /// UPDATE LEVEL COUNTER TEXT
   document.querySelector("#level_counter").textContent = "Level " + points + "/5";
+
+  /// GO TO LEVEL FUNCTION BASED ON POINTS
   eval("level" + points + "()");
 }
 
