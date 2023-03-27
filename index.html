@@ -51,16 +51,18 @@
         </div>
         <div id="start">
           <h2>Vælg den rigtige AIO placering og størrelse</h2>
-          <h1>Tryk venligst F11 for den bedste UI kompatibilitet.</h1>
-          <div><img src='img\\aio_diagram.png'></div>
-          <p>
+          <h1 id="start_h1">Tryk venligst F11 for den bedste UI kompatibilitet.</h1>
+          <div><img src="img\\aio_diagram.png" /></div>
+          <button id="btn_start" class="pulse">Start</button>
+          <p id="start_p">
             AIO (<u><b>A</b></u
             >ll-<u><b>I</b></u
             >n-<u><b>O</b></u
-            >ne) er et begreb for et færdigt vandkølingssystem, ofte brugt til  at nedkøle varme processore.<br />Pumpen sidder oftest samme sted som selve CPU blokken, hvor den har kontakt med processoren.<br />Hvis en arbejder tørt, fx grundet mangel på vand, vil den gå i stykker relativt hurtigt.<br />Der vil altid være en smule luft i sådan et system, som naturligt vil søge op, da luft vejer mindre end væske.<br />Placerer man ikke denne køler korrekt, kan det derfor resultere i at produktet dør alt for tidligt, som vil resultere i overophedning af dit system.<br />Derudover
-            burde man altid udnytte al pladsen i kabinettet, så længe det passer ind ret fysisk, da prisforskellen mellem radiator størrelser er ofte ikke særlig stor.
+            >ne) er et begreb for et færdigt vandkølingssystem, ofte brugt til at nedkøle varme processore.<br />Pumpen sidder oftest samme sted som selve CPU blokken, hvor den har kontakt med processoren.<br />Hvis en
+            arbejder tørt, fx grundet mangel på vand, vil den gå i stykker relativt hurtigt.<br />Der vil altid være en smule luft i sådan et system, som naturligt vil søge op, da luft vejer mindre end væske.<br />Placerer
+            man ikke denne køler korrekt, kan det derfor resultere i at produktet dør alt for tidligt, som vil resultere i overophedning af dit system.<br />Derudover burde man altid udnytte al pladsen i kabinettet, så
+            længe det passer ind ret fysisk, da prisforskellen mellem radiator størrelser er ofte ikke særlig stor.
           </p>
-          <button id="btn_start" class="pulse">Start</button>
         </div>
         <div id="game_over" class="hidden">
           <h2 id="game_over_title"></h2>
@@ -71,7 +73,7 @@
         <div id="game_win" class="hidden">
           <h2>You did it! Well done!</h2>
           <p>Need more help with PC building? Ask MagnuTron</p>
-          <div><img src='img\\logo.png'></div>
+          <div><img src="img\\logo.png" /></div>
           <button id="btn_win_reset" onclick="document.location.reload()" class="pulse">Igen!</button>
         </div>
       </div>

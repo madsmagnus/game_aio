@@ -30,6 +30,20 @@ button {
   margin-top: 0.5em;
 }
 
+#btn_start {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+
+#start_p {
+  margin-top: -23px;
+}
+
+#start_h1 {
+  margin-bottom: -20px;
+}
+
 #screen {
   aspect-ratio: 16 / 9;
   display: grid;
@@ -114,7 +128,6 @@ button {
 #start.hidden {
   display: none;
 }
-
 
 /* Animations */
 
